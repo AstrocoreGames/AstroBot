@@ -14,7 +14,7 @@ const HelpEmbed = new Discord.MessageEmbed()
     .setFooter('Astro by Astrocore');
     HelpEmbed.addField("`help`", 'Shows You All The Commmands You Can Use With Astro')
     for (const file of commandFiles) {
-        HelpEmbed.addField('`' + file.slice(0, -3).toLowerCase() + '`', require(`./cmds/${file}`)['desc'])
+        HelpEmbed.addField('`' + file.slice(0, -3).toLowerCase() + '`', require(`../cmds/${file}`)['desc'])
     }
 
 var cmd = function(msg, args) {

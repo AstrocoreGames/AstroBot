@@ -1,8 +1,8 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
-const Command = require('./commands')
-const Config = require('./config')
+const Command = require('./core/commands')
+const Config = require('./core/config')
 
 //Bot Init
 client.on('ready', () => {

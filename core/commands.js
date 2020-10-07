@@ -11,9 +11,9 @@ const commandFiles = fs
 
 for (const file of commandFiles) {
     commands[file.slice(0, -3).toLowerCase()] = []
-    commands[file.slice(0, -3).toLowerCase()].cmd = require(`./cmds/${file}`)['cmd']
+    commands[file.slice(0, -3).toLowerCase()].cmd = require(`../cmds/${file}`)['cmd']
     commands[file.slice(0, -3).toLowerCase()].name = file.slice(0, -3).toLowerCase()
-    commands[file.slice(0, -3).toLowerCase()].desc = require(`./cmds/${file}`)['desc']
+    commands[file.slice(0, -3).toLowerCase()].desc = require(`../cmds/${file}`)['desc']
 }
 
 const HelpEmbed = new Discord.MessageEmbed()
@@ -24,7 +24,7 @@ const HelpEmbed = new Discord.MessageEmbed()
     .setFooter('Astro by the Astrocore Team');
     HelpEmbed.addField("`help`", 'Shows You All The Commmands You Can Use With Astro')
     for (const file of commandFiles) {
-        HelpEmbed.addField('`' + file.slice(0, -3).toLowerCase() + '`', require(`./cmds/${file}`)['desc'])
+        HelpEmbed.addField('`' + file.slice(0, -3).toLowerCase() + '`', require(`../cmds/${file}`)['desc'])
     }
 
 //Command Processing
