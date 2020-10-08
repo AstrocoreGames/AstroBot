@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-const Embed = {}
+const Embed = []
 
 Embed.Create = function(title, desc, fields) {
     const Emb = new Discord.MessageEmbed()
