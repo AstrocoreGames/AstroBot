@@ -8,3 +8,7 @@
 - [ ] Rock Paper Scissors
 - [ ] Dice
 - [ ] 8Ball
+
+### Mod
+- [ ] Kick
+- [ ] Ban
