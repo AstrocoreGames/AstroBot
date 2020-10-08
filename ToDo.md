@@ -3,11 +3,11 @@
 ## Commands To Add
 
 ### Fun
-- [ ] Joke
-- [ ] Meme
-- [ ] Rock Paper Scissors
-- [ ] Dice
-- [ ] 8Ball
+- [X] Joke
+- [X] Meme
+- [X] Rock Paper Scissors
+- [X] Dice
+- [X] 8Ball
 
 ### Mod
 - [ ] Kick
