@@ -1,0 +1,5 @@
+# Discord bot token, find at https://discord.com/developers/applications
+token: ""
+
+# Discord bot prefix, goes before commands ex. !help
+prefix: "!"

@@ -1,8 +1,9 @@
 const fs = require('fs')
+const Yaml = require('yaml')
 
 let Config = []
 
-let Settings = JSON.parse(fs.readFileSync("Config.json", 'utf8'))
+let Settings = Yaml.parse(fs.readFileSync("Config.yml", 'utf8'))
 
 if (fs.existsSync("token.txt")) {
     Config.token = fs.readFileSync("token.txt", 'utf8')
