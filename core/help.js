@@ -12,7 +12,7 @@ const HelpEmbed = new Discord.MessageEmbed()
     .setDescription("Prefix = " + Config.prefix)
     .setAuthor(Config.embed_settings.name, Config.embed_settings.icon)
     .setFooter('Created by Astrocore');
-    HelpEmbed.addField("`help`", 'Shows You All The Commmands You Can Use With Astro')
+    HelpEmbed.addField("`help`", 'Shows You All The Commmands You Can Use')
     for (const file of commandFiles) {
         HelpEmbed.addField('`' + file.slice(0, -3).toLowerCase() + '`', require(`../cmds/${file}`)['desc'])
     }

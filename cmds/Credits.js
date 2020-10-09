@@ -8,6 +8,6 @@ cmd.cmd = function(msg, args) {
     msg.channel.send(CreditsEmbed)
 }
 
-cmd.desc = "Shows you the credits for Astro"
+cmd.desc = "Shows you the credits"
 
 module.exports = cmd;
