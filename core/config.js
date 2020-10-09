@@ -13,4 +13,12 @@ if (fs.existsSync("token.txt")) {
 
 Config.prefix = Settings.prefix
 
+Config.embed_settings = []
+
+Config.embed_settings.name = Settings.embed_settings.name
+
+Config.embed_settings.icon = Settings.embed_settings.icon
+
+Config.embed_settings.color = Settings.embed_settings.color
+
 module.exports = Config
