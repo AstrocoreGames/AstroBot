@@ -8,7 +8,7 @@ Embed.Create = function(title, desc, fields) {
         .setColor(Config.embed_settings.color)
         .setTitle(title)
         .setDescription(desc)
-        .setAuthor(Config.embed_settings.name, Config.embed_settings.icon)
+        .setAuthor(Config.name, Config.embed_settings.icon)
         .setFooter('Created by Astrocore');
         var i;
         for (i = 0; i < fields.length; i++) {

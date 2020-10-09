@@ -10,7 +10,7 @@ const HelpEmbed = new Discord.MessageEmbed()
     .setColor(Config.embed_settings.color)
     .setTitle("Help")
     .setDescription("Prefix = " + Config.prefix)
-    .setAuthor(Config.embed_settings.name, Config.embed_settings.icon)
+    .setAuthor(Config.name, Config.embed_settings.icon)
     .setFooter('Created by Astrocore');
     HelpEmbed.addField("`help`", 'Shows You All The Commmands You Can Use')
     for (const file of commandFiles) {
