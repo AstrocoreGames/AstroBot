@@ -5,9 +5,8 @@ var cmd = []
 
 cmd.cmd = function(msg, args) {
     fetch('https://meme-api.herokuapp.com/gimme')
-        .then(res => res.text())
+        .then(res => res.json())
         .then(body => {
-            body = JSON.parse(body)
             msg.channel.send(body.url)
         });
 }
