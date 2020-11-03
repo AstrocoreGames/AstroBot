@@ -1,24 +1,17 @@
 const fs = require('fs')
-const Yaml = require('yaml')
 
-let Config = []
-
-let Settings = Yaml.parse(fs.readFileSync("Config.yml", 'utf8'))
+let Settings = JSON.parse(fs.readFileSync("Config.json", 'utf8'))
 
 if (fs.existsSync("token.txt")) {
-    Config.token = fs.readFileSync("token.txt", 'utf8')
-} else {
-    Config.token = Settings.token
+    Settings.token = fs.readFileSync("token.txt", 'utf8')
 }
 
-Config.prefix = Settings.prefix
+Settings.save =  function() {
+    let Config = Settings
+    if (fs.existsSync("token.txt")) {
+        Config.token = ""
+    }
+    fs.writeFileSync("Config.json", JSON.stringify(Config))
+} 
 
-Config.name = Settings.name
-
-Config.embed_settings = []
-
-Config.embed_settings.icon = Settings.embed_settings.icon
-
-Config.embed_settings.color = Settings.embed_settings.color
-
-module.exports = Config
+module.exports = Settings

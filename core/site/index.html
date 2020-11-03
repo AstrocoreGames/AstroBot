@@ -1,0 +1,39 @@
+<head>
+    <title>AstroBot Dashboard</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <center>
+        <h1>Welcome to the AstroBot dashboard</h1>
+        <h2><b>After saving you must restart the bot for the changes to come into effect</b></h2>
+        <h2>Bot Settings</h2>
+        <h3>Name: </h3>
+        <input id="name">
+        <h3>Prefix: </h3>
+        <input id="prefix">
+        <h3>Token: </h3>
+        <input id="token" type="password">
+        <h2>Embed Settings</h2>
+        <h3>Color: </h3>
+        <input id="color">
+        <h3>Icon: </h3>
+        <input id="icon">
+        <br />
+        <br />
+        <button onclick="save()">Save</button>
+    </center>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io()
+    socket.on('init', function(name, prefix, token, icon, color) {
+        document.getElementById("name").value = name
+        document.getElementById("prefix").value = prefix
+        document.getElementById("token").value = token
+        document.getElementById("icon").value = icon
+        document.getElementById("color").value = color
+    })
+    function save() {
+        socket.emit('save', document.getElementById("name").value, document.getElementById("prefix").value, document.getElementById("token").value, document.getElementById("icon").value, document.getElementById("color").value)
+    }
+</script>

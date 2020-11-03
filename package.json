@@ -2,10 +2,10 @@
   "name": "astrobot",
   "version": "1.0.0",
   "description": "A general purpose Discord bot",
-  "main": "index.js",
+  "main": "./core/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node ./core/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,13 @@
   },
   "homepage": "https://github.com/AstrocoreGames/AstroBot#readme",
   "dependencies": {
+    "child_process": "^1.0.2",
     "discord.js": "^12.3.1",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "http": "0.0.1-security",
     "node-fetch": "^2.6.1",
     "npm": "^6.14.8",
-    "start": "^5.1.0",
-    "yaml": "^1.10.0"
+    "socket.io": "^2.3.0"
   }
 }
