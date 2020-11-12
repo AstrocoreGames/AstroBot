@@ -12,3 +12,9 @@
 ### Mod
 - [ ] Kick
 - [ ] Ban
+
+### Other
+- [ ] Reaction Roles
+- [ ] Tickets
+- [ ] YouTube Notifications
+- [ ] Twitch Notifications

@@ -1,17 +1,10 @@
 const fs = require('fs')
+const YAML = require('yaml')
 
-let Settings = JSON.parse(fs.readFileSync("Config.json", 'utf8'))
+let Settings = YAML.parse(fs.readFileSync("Config.yml", 'utf8'))
 
 if (fs.existsSync("token.txt")) {
     Settings.token = fs.readFileSync("token.txt", 'utf8')
 }
-
-Settings.save =  function() {
-    let Config = Settings
-    if (fs.existsSync("token.txt")) {
-        Config.token = ""
-    }
-    fs.writeFileSync("Config.json", JSON.stringify(Config))
-} 
 
 module.exports = Settings
