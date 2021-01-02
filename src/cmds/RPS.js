@@ -1,55 +1,31 @@
 const Embed = require('../util/Embed')
 const Random = require('../util/Random')
 
-function DoesPlayerWin(GameHand, Hand) {
-    if (GameHand === 'rock' && Hand === 'scissors') {
-        return 0
-    }
-    if (GameHand === 'paper' && Hand === 'rock') {
-        return 0
-    }
-    if (GameHand === 'scissors' && Hand === 'paper') {
-        return 0
-    }
-    if (Hand === 'rock' && GameHand === 'scissors') {
-        return 1
-    }
-    if (Hand === 'paper' && GameHand === 'rock') {
-        return 1
-    }
-    if (Hand === 'scissors' && GameHand === 'paper') {
-        return 1
-    }
-    if (Hand === GameHand) {
-        return 2
-    }
+function GetOutcome(GameHand, Hand) {
+    return GameHand == 1 && Hand == 3 || 
+    GameHand == 2 && Hand == 1 || 
+    GameHand == 3 && Hand == 2 ? "Loss" : 
+    GameHand == 3 && Hand == 1 || 
+    GameHand == 1 && Hand == 2 || 
+    GameHand == 2 && Hand == 3 ? "Win" : 
+    GameHand == Hand ? "Tie" : null;
+}
+
+function HandToNum(hand) {
+    return hand == "rock" ? 1 : hand == "paper" ? 2 : hand == "scissors" ? 3 : null;
+}
+
+function NumToHand(num) {
+    return num == 1 ? "rock" : num == 2 ? "paper" : num == 3 ? "scissors" : null;
 }
 
 function Game(msg, Hand) {
-    var GameHand = Random(1, 3)
-    if (GameHand === 1) {
-        GameHand = 'rock'
-    }
-    if (GameHand === 2) {
-        GameHand = 'paper'
-    }
-    if (GameHand === 3) {
-        GameHand = 'scissors'
-    }
-    const Win = DoesPlayerWin(GameHand, Hand)
-    var Outcome
-    if (Win === 0) {
-        Outcome = "Loss"
-    }
-    if (Win === 1) {
-        Outcome = "Win"
-    }
-    if (Win === 2) {
-        Outcome = "Tie"
-    }
+    const GameHand = Random(1, 3)
+    Hand = HandToNum(Hand)
+    const Outcome = GetOutcome(GameHand, Hand)
     const RPSEmbed = Embed('Rock Paper Scissors', '', [
-        {name: 'Your Move', value: '`' + Hand + '`'},
-        {name: 'Bot Move', value: '`' + GameHand + '`'},
+        {name: 'Your Move', value: '`' + NumToHand(Hand) + '`'},
+        {name: 'Bot Move', value: '`' + NumToHand(GameHand) + '`'},
         {name: 'Outcome', value: '`' + Outcome + '`'}
     ])
     msg.channel.send(RPSEmbed)
