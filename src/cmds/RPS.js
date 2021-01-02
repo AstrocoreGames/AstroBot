@@ -2,12 +2,8 @@ const Embed = require('../util/Embed')
 const Random = require('../util/Random')
 
 function GetOutcome(GameHand, Hand) {
-    return GameHand == 1 && Hand == 3 || 
-    GameHand == 2 && Hand == 1 || 
-    GameHand == 3 && Hand == 2 ? "Loss" : 
-    GameHand == 3 && Hand == 1 || 
-    GameHand == 1 && Hand == 2 || 
-    GameHand == 2 && Hand == 3 ? "Win" : 
+    return GameHand == 1 && Hand == 3 || GameHand == 2 && Hand == 1 || GameHand == 3 && Hand == 2 ? "Loss" : 
+    GameHand == 3 && Hand == 1 || GameHand == 1 && Hand == 2 || GameHand == 2 && Hand == 3 ? "Win" : 
     GameHand == Hand ? "Tie" : null;
 }
 
