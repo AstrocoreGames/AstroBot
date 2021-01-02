@@ -1,5 +1,5 @@
-const fs = require('fs')
-const YAML = require('yaml')
+import YAML from 'yaml'
+import fs from 'fs'
 
 let Settings = YAML.parse(fs.readFileSync("Config.yml", 'utf8'))
 

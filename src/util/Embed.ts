@@ -1,18 +1,15 @@
-const Discord = require('discord.js')
-const Config = require('../core/config')
+import Discord from 'discord.js'
+const Config = require('../config')
 
-const Embed = []
-
-Embed.Create = function(title, desc, fields) {
+const Embed = function(title : string, desc : string, fields : any[]) {
     const Emb = new Discord.MessageEmbed()
         .setColor(Config.embed_settings.color)
         .setTitle(title)
         .setDescription(desc)
         .setAuthor(Config.name, Config.embed_settings.icon)
         .setFooter('Created by Astrocore');
-        var i;
-        for (i = 0; i < fields.length; i++) {
-            Emb.addFields(fields[i])
+        for (let field of fields) {
+            Emb.addFields(field)
         }
     return Emb
 }

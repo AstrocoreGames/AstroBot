@@ -1,39 +1,28 @@
 {
-  "name": "astrobot",
+  "name": "advent-of-code-day-02",
   "version": "1.0.0",
-  "description": "A general purpose Discord bot",
-  "main": "./core/index.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./core/index.js"
+    "compile": "tsc && node dist/index.js",
+    "dev": "nodemon -e ts --exec \"npm run compile\"",
+    "start": "ts-node src/index.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AstrocoreGames/AstroBot.git"
-  },
-  "keywords": [
-    "discord",
-    "bot",
-    "mod",
-    "moderation",
-    "fun",
-    "commands"
-  ],
-  "author": "Astrocore",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AstrocoreGames/AstroBot/issues"
-  },
-  "homepage": "https://github.com/AstrocoreGames/AstroBot#readme",
   "dependencies": {
-    "child_process": "^1.0.2",
-    "discord.js": "^12.3.1",
-    "express": "^4.17.1",
+    "discord.js": "^12.5.1",
+    "fetch": "^1.1.0",
     "fs": "0.0.1-security",
-    "http": "0.0.1-security",
-    "node-fetch": "^2.6.1",
-    "npm": "^6.14.8",
-    "socket.io": "^2.3.0",
+    "node": "^15.4.0",
+    "node-sass": "^5.0.0",
+    "typescript": "^4.1.2",
     "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.19",
+    "nodemon": "^1.19.1",
+    "ts-loader": "^6.0.2",
+    "ts-node": "3.3.0"
   }
 }

@@ -47,7 +47,7 @@ function Game(msg, Hand) {
     if (Win === 2) {
         Outcome = "Tie"
     }
-    const RPSEmbed = Embed.Create('Rock Paper Scissors', '', [
+    const RPSEmbed = Embed('Rock Paper Scissors', '', [
         {name: 'Your Move', value: '`' + Hand + '`'},
         {name: 'Bot Move', value: '`' + GameHand + '`'},
         {name: 'Outcome', value: '`' + Outcome + '`'}

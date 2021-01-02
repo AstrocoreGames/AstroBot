@@ -10,7 +10,7 @@ cmd.cmd = function(msg, args) {
         fetch(uri)
             .then(res => res.json())
             .then(body => {
-                const AnswerEmbed = Embed.Create('8Ball', '', [{name: 'Answer', value: '`' + body.magic.answer + '`'}])
+                const AnswerEmbed = Embed('8Ball', '', [{name: 'Answer', value: '`' + body.magic.answer + '`'}])
                 msg.channel.send(AnswerEmbed)
             });
     } else {

@@ -5,7 +5,7 @@ var cmd = []
 
 cmd.cmd = function(msg, args) {
     const Num = Random(1, 6)
-    const DiceEmbed = Embed.Create('Dice', '', [{name: 'Number', value: '`' + Num + '`'}])
+    const DiceEmbed = Embed('Dice', '', [{name: 'Number', value: '`' + Num + '`'}])
     msg.channel.send(DiceEmbed)
 }
 
