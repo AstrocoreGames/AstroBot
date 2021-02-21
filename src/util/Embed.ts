@@ -1,5 +1,5 @@
 import Discord from 'discord.js'
-const Config = require('../config')
+const Config: any = require('../config')
 
 const Embed = function(title : string, desc : string, fields : any[]) {
     const Emb = new Discord.MessageEmbed()

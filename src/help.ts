@@ -1,9 +1,9 @@
 import fs from 'fs'
 import Discord from 'discord.js'
 
-const Config = require('./config')
+const Config: any = require('./config')
 
-const commandFiles = fs
+const commandFiles: string[] = fs
     .readdirSync("./dist/cmds")
     .filter((file) => file.endsWith(".js"))
 
@@ -13,13 +13,13 @@ const HelpEmbed = new Discord.MessageEmbed()
     .setDescription("Prefix = " + Config.prefix)
     .setAuthor(Config.name, Config.embed_settings.icon)
     .setFooter('Created by Astrocore');
-    HelpEmbed.addField("`help`", 'Shows You All The Commmands You Can Use')
+    HelpEmbed.addField("`help`", 'Shows You All The Commands You Can Use')
     for (const file of commandFiles) {
         HelpEmbed.addField('`' + file.slice(0, -3).toLowerCase() + '`', require(`./cmds/${file}`)['desc'])
     }
 
-var cmd = function(msg : any, args : string[]) {
+const cmd = function (msg: any) {
     msg.channel.send(HelpEmbed)
-}
+};
 
 module.exports = cmd
