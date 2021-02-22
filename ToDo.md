@@ -2,6 +2,9 @@
 
 ## Commands To Add
 
+### Bot
+- [ ] Tab System for help menu (similar to YAGPDB.xyz)
+
 ### Fun
 - [X] Joke
 - [X] Meme
