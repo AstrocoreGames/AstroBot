@@ -5,6 +5,11 @@
 ### Bot
 - [ ] Tab System for help menu (similar to YAGPDB.xyz)
 
+### General
+- [X] Prefix
+- [ ] Info
+- [ ] Invite
+
 ### Fun
 - [X] Joke
 - [X] Meme
