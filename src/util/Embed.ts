@@ -1,7 +1,7 @@
 import Discord from 'discord.js'
-const Config: any = require('../config')
+const Config = require('../config')
 
-const Embed = function(title : string, desc : string, fields : any[]) {
+module.exports = function(title : string, desc : string, fields : any[]) {
     const Emb = new Discord.MessageEmbed()
         .setColor(Config.embed_settings.color)
         .setTitle(title)
@@ -13,5 +13,3 @@ const Embed = function(title : string, desc : string, fields : any[]) {
         }
     return Emb
 }
-
-module.exports = Embed;

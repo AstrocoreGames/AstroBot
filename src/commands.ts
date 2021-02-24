@@ -1,9 +1,9 @@
 import fs from 'fs'
 
-const Help: any = require('./help')
-const Config: any = require('./config')
+const Help = require('./help')
+const Config = require('./config')
 
-const commands: any[] = [];
+const commands = [];
 
 const commandFiles: string[] = fs
   .readdirSync("./dist/cmds")
@@ -14,7 +14,7 @@ for (const file of commandFiles) {
 }
 
 //Command Processing
-const CMDS = function (msg: any) {
+module.exports = function (msg: any) {
     const fullCommand: string = msg.content.substr(Config.prefix.length)
     const splitCommand: string[] = fullCommand.split(" ")
     const primaryCommand: string = splitCommand[0].toLowerCase()
@@ -26,6 +26,3 @@ const CMDS = function (msg: any) {
         Help(msg)
     }
 };
-
-//Export To Main File
-module.exports = CMDS;

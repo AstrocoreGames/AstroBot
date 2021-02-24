@@ -1,7 +1,7 @@
 import fs from 'fs'
 import Discord from 'discord.js'
 
-const Config: any = require('./config')
+const Config = require('./config')
 
 const commandFiles: string[] = fs
     .readdirSync("./dist/cmds")
@@ -18,8 +18,6 @@ const HelpEmbed = new Discord.MessageEmbed()
         HelpEmbed.addField('`' + file.slice(0, -3).toLowerCase() + '`', require(`./cmds/${file}`)['desc'])
     }
 
-const cmd = function (msg: any) {
+module.exports = function (msg: any) {
     msg.channel.send(HelpEmbed)
 };
-
-module.exports = cmd
