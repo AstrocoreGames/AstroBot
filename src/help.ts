@@ -18,6 +18,6 @@ const HelpEmbed = new Discord.MessageEmbed()
         HelpEmbed.addField('`' + file.slice(0, -3).toLowerCase() + '`', require(`./cmds/${file}`)['desc'])
     }
 
-module.exports = function (msg: any) {
+module.exports = function (msg) {
     msg.channel.send(HelpEmbed)
 };

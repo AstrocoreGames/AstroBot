@@ -14,7 +14,7 @@ for (const file of commandFiles) {
 }
 
 //Command Processing
-module.exports = function (msg: any) {
+module.exports = function (msg) {
     const fullCommand: string = msg.content.substr(Config.prefix.length)
     const splitCommand: string[] = fullCommand.split(" ")
     const primaryCommand: string = splitCommand[0].toLowerCase()
